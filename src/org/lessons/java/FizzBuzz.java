@@ -1,8 +1,16 @@
 package org.lessons.java;
 
+import java.util.Scanner;
+
 public class FizzBuzz {
 	public static void main(String[] args) {
-		int totalNumbers = 100;
+		int totalNumbers;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Please type the numbers you want to cycle with the FizzBuzz algorithm");
+				
+		totalNumbers = sc.nextInt();
 		
 		for (int i = 1 ; i < totalNumbers; i++) {
 			if (i % 3 == 0 && i % 5 == 0) {
@@ -13,5 +21,7 @@ public class FizzBuzz {
 				System.out.println("Buzz");
 			}
 		}
+		
+		sc.close();	
 	}
 }
