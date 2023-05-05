@@ -22,21 +22,20 @@ public class CheckGuest {
 		
 		System.out.println("Please, insert your invitation name to check if you are in the list");
 		
-		String userName = sc.next();
+		String userName = sc.nextLine();
 				
 		boolean isInTheList = false;
 		
 		for (int i = 0; i < invitedPeople.length; i++) {
-			if (invitedPeople[i] == userName) {
+			String nameInTheList = invitedPeople[i];
+			if (userName.equals(nameInTheList)) {
 				isInTheList = true;
+				System.out.println("Welcome! Your name is in the list. Please, come in!");
+				return;
 			}
 		}
-		
-		if (isInTheList) {
-			System.out.println("Welcome! Your name is in the list. Please, come in!");
-		} else {
-			System.out.println("I'm sorry, your name is not in the list. You can't get in.");
-		}
+
+		System.out.println("I'm sorry, your name is not in the list. You can't get in.");
 		
 		sc.close();
 	}
